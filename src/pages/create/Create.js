@@ -16,7 +16,7 @@ function Create() {
     "http://localhost:3000/recipes",
     "POST"
   );
-  const history = useHistory;
+  const history = useHistory();
 
   // Handle Submit
   const handleSubmit = (e) => {
