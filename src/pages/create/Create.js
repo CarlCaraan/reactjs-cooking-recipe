@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 import "./Create.css";
 
@@ -10,11 +11,21 @@ function Create() {
   const [newIngredient, setNewIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const ingredientInput = useRef(null);
+  const { postData, data, error } = useFetch(
+    "http://localhost:3000/recipes",
+    "POST"
+  );
 
   // Handle Submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, method, cookingTime, ingredients);
+    // console.log(title, method, cookingTime, ingredients);
+    postData({
+      title,
+      method,
+      ingredients,
+      cookingTime: cookingTime + " minutes",
+    });
   };
 
   // Handle Add
