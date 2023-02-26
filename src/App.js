@@ -2,7 +2,7 @@
 import Home from "./pages/home/Home";
 import Create from "./pages/create/Create";
 import Search from "./pages/search/Search";
-import Recipe from "./pages/recipe/RecipeDetails";
+import RecipeDetails from "./pages/recipe/RecipeDetails";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -28,7 +28,7 @@ function App() {
             <Search />
           </Route>
           <Route path="/recipes/:id">
-            <Recipe />
+            <RecipeDetails />
           </Route>
         </Switch>
       </BrowserRouter>
