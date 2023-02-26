@@ -52,6 +52,7 @@ function Create() {
   return (
     <div className="create">
       <h2 className="page-title">Add a New Recipe</h2>
+      {error && <p>{error}</p>}
 
       {/* Form */}
       <form onSubmit={handleSubmit}>

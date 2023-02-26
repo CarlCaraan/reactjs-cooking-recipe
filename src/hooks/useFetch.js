@@ -6,6 +6,7 @@ export const useFetch = (url, method = "GET") => {
   const [error, setError] = useState(null);
   const [options, setOptions] = useState(null);
 
+  // Post function
   const postData = (postData) => {
     setOptions({
       method: "POST",
@@ -45,6 +46,7 @@ export const useFetch = (url, method = "GET") => {
       }
     };
 
+    // Post or Get
     if (method === "GET") {
       fetchData();
     }
