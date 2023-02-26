@@ -11,7 +11,7 @@ function Searchbar() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Query Search
+    // Redirect
     history.push(`/search?q=${term}`);
   };
 
