@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { ThemeContext } from "./context/ThemeContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContext.Provider>
+    <ThemeProvider>
       <App />
-    </ThemeContext.Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
