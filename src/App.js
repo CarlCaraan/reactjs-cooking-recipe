@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 // Styles
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ThemeSelector from "./components/ThemeSelector";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         {/* Navigation */}
         <Navbar />
+        <ThemeSelector />
         <Switch>
           <Route path="/" exact>
             <Home />
