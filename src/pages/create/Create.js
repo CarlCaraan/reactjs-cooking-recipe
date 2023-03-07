@@ -4,6 +4,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { useHistory } from "react-router-dom";
 
 import "./Create.css";
+import { useTheme } from "../../hooks/useTheme";
 
 function Create() {
   const [title, setTitle] = useState("");
@@ -17,6 +18,9 @@ function Create() {
     "POST"
   );
   const history = useHistory();
+
+  // Dark Mode
+  const { mode } = useTheme();
 
   // Handle Submit
   const handleSubmit = (e) => {
@@ -50,8 +54,8 @@ function Create() {
   }, [data, history]);
 
   return (
-    <div className="create">
-      <h2 className="page-title">Add a New Recipe</h2>
+    <div className={`create ${mode}`}>
+      <h2 className={`page-title ${mode}`}>Add a New Recipe</h2>
       {error && <p>{error}</p>}
 
       {/* Form */}

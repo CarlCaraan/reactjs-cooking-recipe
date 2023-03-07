@@ -31,3 +31,12 @@
 .ingredients button {
   margin: 0 0 0 10px;
 }
+
+/* Dark Mode */
+.page-title.dark {
+  color: #e4e4e4;
+}
+.create.dark label span,
+.create.dark p {
+  color: #e4e4e4;
+}
