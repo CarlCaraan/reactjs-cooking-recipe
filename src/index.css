@@ -41,3 +41,10 @@ textarea {
   text-align: center;
   margin: 40px auto;
 }
+/* Dark Mode */
+.loading.dark,
+.error.dark {
+  text-align: center;
+  margin: 40px auto;
+  color: #eee;
+}
