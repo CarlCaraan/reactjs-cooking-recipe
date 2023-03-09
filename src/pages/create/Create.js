@@ -15,10 +15,12 @@ function Create() {
   const [newIngredient, setNewIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const ingredientInput = useRef(null);
+
   // const { postData, data, error } = useFetch(
   //   "http://localhost:3000/recipes",
   //   "POST"
   // );
+
   const history = useHistory();
   const [error, setError] = useState("");
 
