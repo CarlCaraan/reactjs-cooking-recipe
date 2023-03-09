@@ -22,11 +22,11 @@ function RecipeDetails() {
     setIsPending(true);
 
     // Firestore Function
-    projectFirestore
+    // Fetching Data
+    const unsub = projectFirestore
       .collection("recipes")
       .doc(id)
-      .get()
-      .then((doc) => {
+      .onSnapshot((doc) => {
         // console.log(doc);
         if (doc.exists) {
           setIsPending(false);
@@ -36,7 +36,15 @@ function RecipeDetails() {
           setError("Could not find that recipe");
         }
       });
+    return () => unsub();
   }, [id]);
+
+  // Update Function
+  const handleClick = () => {
+    projectFirestore.collection("recipes").doc(id).update({
+      title: "lorem ipsum...",
+    });
+  };
 
   return (
     <div className={`recipe ${mode}`}>
@@ -51,7 +59,8 @@ function RecipeDetails() {
               <li key={ingredient}>{ingredient}</li>
             ))}
           </ul>
-          <p>{recipe.method}</p>
+          <p className="method">{recipe.method}</p>
+          <button onClick={handleClick}>Update me</button>
         </Fragment>
       )}
     </div>
