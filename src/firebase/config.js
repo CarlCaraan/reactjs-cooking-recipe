@@ -13,7 +13,7 @@ const firebaseConfig = {
 // Init Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Init Services
+// Init Service
 const projectFirestore = firebase.firestore();
 
 export { projectFirestore };
